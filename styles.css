@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #111;
+  min-height: 100vh;
+  position: relative;
+}
+
+main {
+  width: 100vw;
+  padding: 5px;
+}
+
+.thumbs {
+  margin-top: 15px;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  justify-content: space-between;
+
+  /* width: 100vw; */
+}
+
+.thumb {
+  object-fit: cover;
+  height: 10vh;
+  max-width: 120px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#glitch {
+  object-fit: contain;
+  max-width: 90vw;
+  height: 80vh;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.holder {
+  background: #111;
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 100;
+
+  animation: disappear 5s forwards;
+}
+
+.spinner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30vw;
+  height: 30vw;
+}
+.spinner span {
+  top: 0;
+  right: 0;
+  position: absolute;
+  border: 2px solid #fff;
+  /* pointer-events: none; */
+  animation: animate 5s infinite;
+  width: 30vw;
+  height: 30vw;
+}
+.spinner span:nth-child(1) {
+  border-radius: 38% 62% 64% 36% / 43% 35% 65% 57%;
+}
+.spinner span:nth-child(2) {
+animation-duration: 5s;
+  border-radius: 41% 59% 60% 60% / 65% 26% 34% 35%;
+border-color: #EFDCC6;
+}
+.spinner span:nth-child(3) {
+  animation-direction: reverse;
+  animation-duration: 3s;
+  border-radius: 73% 27% 56% 44% / 57% 74% 26% 43%;
+}
+.spinner span:nth-child(4) {
+animation-direction: reverse;
+border-radius: 64% 36% 38% 62%  / 43% 57% 35% 65%;
+border-color: #C7D6E7;
+}
+.spinner span:nth-child(5) {
+  animation-direction: reverse;
+  border-radius: 59% 40% 41% 60% / 65% 35% 66% 34%;
+}
+.spinner span:nth-child(6) {
+  animation-duration: 4s;
+  border-radius: 38% 73% 27% 56% / 57% 43% 74% 26%;
+  border-color: #DCCCC8
+}
+@keyframes animate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    z-index: 100;
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1.0;
+    z-index: 50;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+h2 {
+  color: #fff;
+  font-weight: 500;
+  font-family: consolas;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 400px) {
+  .loader {
+    width: 60vw;
+    height: 60vw;
+  }
+}
+
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  body {
+    background-color: red;
+  }
+}
