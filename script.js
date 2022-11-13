@@ -10,7 +10,7 @@ for(let thumb of thumbs) {
 pickFirstGlitch();
 
 function pickFirstGlitch() {
-  const pick = Math.floor(Math.random() * (12 - 0 + 1) + 0);
+  const pick = Math.floor(Math.random() * (13 - 0 + 1) + 0);
   glitch.src = thumbs[pick].src;
   glitch.alt = thumbs[pick].alt;
 }
